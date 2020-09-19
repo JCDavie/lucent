@@ -44,9 +44,8 @@ def rfft2d_freqs(h, w):
 def fft_image(shape, sd=None, decay_power=1):
     batch, channels, h, w = shape
     freqs = rfft2d_freqs(h, w)
-    freqs1 = torch.tensor(scale).float()
-    print(freqs1)
-    print('scale', freqs1.size(), freqs1.mean(), freqs1.sum(), freqs1.norm())
+    print(freqs)
+    print('scale', freqs1.shape)
     init_val_size = (batch, channels) + freqs.shape + (2,) # 2 for imaginary and real components
     sd = sd or 0.01
 
