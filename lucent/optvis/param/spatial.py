@@ -45,7 +45,7 @@ def fft_image(shape, sd=None, decay_power=1):
     batch, channels, h, w = shape
     freqs = rfft2d_freqs(h, w)
     print(freqs)
-    print('scale', freqs1.shape)
+    print('scale', freqs.shape)
     init_val_size = (batch, channels) + freqs.shape + (2,) # 2 for imaginary and real components
     sd = sd or 0.01
 
