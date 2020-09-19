@@ -51,6 +51,8 @@ def fft_image(shape, sd=None, decay_power=1):
 
     scale = 1.0 / np.maximum(freqs, 1.0 / max(w, h)) ** decay_power
     scale = torch.tensor(scale).float()[None, None, ..., None].to(device)
+    print(scale)
+    print('scale', scale.size(), scale.mean(), scale.sum(), scale.norm())
 
     def inner():
         scaled_spectrum_t = scale * spectrum_real_imag_t
