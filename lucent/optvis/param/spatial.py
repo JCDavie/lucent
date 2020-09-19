@@ -38,6 +38,8 @@ def rfft2d_freqs(h, w):
         fx = np.fft.fftfreq(w)[: w // 2 + 2]
     else:
         fx = np.fft.fftfreq(w)[: w // 2 + 1]
+    print('fy', fy)
+    print('fx', fx)
     return np.sqrt(fx * fx + fy * fy)
 
 
